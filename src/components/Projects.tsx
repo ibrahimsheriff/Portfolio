@@ -2,24 +2,29 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github } from 'lucide-react';
 
+// Importing local images
+import musicAppImage from '../assets/music_app.jpeg';
+import portfolioImage from '../assets/portfolio.png';
+import linkedinCloneImage from '../assets/Linkedin_clone.png';
+
 const projects = [
   {
     title: 'Music Mobile App',
     description: 'A Music application built with Flutter and Firebase',
-    image: 'src/assets/music_app.jpeg',
+    image: musicAppImage,  // Using the imported image
     tags: ['Flutter', 'Firebase', 'UI/UX Design'],
     github: 'https://github.com/ibrahimsheriff/Music_App',
   },
   {
     title: 'Figma Design',
     description: 'In the Design every single component created and refined',
-    image: 'src/assets/portfolio.png',
+    image: portfolioImage,  // Using the imported image
     tags: ['Figma'],
   },
   {
     title: 'Linkedin Clone App',
     description: 'A job search application inspired by LinkedIn',
-    image: 'src/assets/Linkedin_clone.png',
+    image: linkedinCloneImage,  // Using the imported image
     tags: ['Flutter'],
     github: 'https://github.com/ibrahimsheriff/linkedin_clone',
   },
@@ -32,7 +37,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-indigo-100 to-indigo-50"> {/* Lighter background colors */}
+    <section id="projects" className="py-20 bg-gradient-to-br from-indigo-100 to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -52,17 +57,17 @@ export default function Projects() {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative transform-gpu"
-                whileHover={{ scale: 1.1, rotateY: 10, rotateX: 5 }}  // Increased hover size
+                whileHover={{ scale: 1.1, rotateY: 10, rotateX: 5 }}
                 style={{
-                  perspective: '1500px',  // Adding perspective for 3D effect
+                  perspective: '1500px',
                 }}
                 onMouseMove={(e) => {
                   const card = e.currentTarget;
                   const { offsetWidth: width, offsetHeight: height } = card;
                   const { offsetX: x, offsetY: y } = e.nativeEvent;
 
-                  const xRotate = ((y / height) - 0.6) * 30; // Y-axis rotation
-                  const yRotate = ((x / width) - 0.6) * -30; // X-axis rotation
+                  const xRotate = ((y / height) - 0.6) * 30;
+                  const yRotate = ((x / width) - 0.6) * -30;
                   card.style.transform = `rotateX(${xRotate}deg) rotateY(${yRotate}deg)`;
                 }}
                 onMouseLeave={(e) => {
@@ -71,7 +76,7 @@ export default function Projects() {
               >
                 <div className="relative aspect-w-16 aspect-h-9">
                   <img
-                    src={project.image}
+                    src={project.image}  // Now uses imported image
                     alt={project.title}
                     className="object-cover w-full h-48"
                   />
@@ -83,7 +88,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-indigo-100 text-black rounded-full text-sm" // Changed text color to black
+                        className="px-3 py-1 bg-indigo-100 text-black rounded-full text-sm"
                       >
                         {tag}
                       </span>
