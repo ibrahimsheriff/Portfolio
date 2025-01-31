@@ -66,10 +66,11 @@ export default function Skills() {
                     initial={{ rotate: -10 }}
                     animate={{ rotate: 0 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="p-2 bg-indigo-100 rounded-lg text-indigo-600"
+                    className="p-2 bg-indigo-100 rounded-lg text-sky-500"
                   >
                     {skill.icon}
                   </motion.div>
+
                   <h3 className="ml-3 text-xl font-semibold text-gray-900">{skill.category}</h3>
                 </div>
                 <div className="space-y-2">

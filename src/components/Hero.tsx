@@ -7,10 +7,10 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-gray-900">
       {/* Background Video */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
+      <video
+        autoPlay
+        loop
+        muted
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src={backgroundVideo} type="video/mp4" />
@@ -24,13 +24,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="pl-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                <span className="block">Hi, I'm Ibrahim Sheriff</span>
-                <span className="block text-indigo-400">UI/UX Designer & Mobile Developer</span>
+                <span className="block">Hii👋🏻</span>
+                <span className="block">I'm Ibrahim Sheriff</span>
+                <span className="block text-sky-500">UI/UX Designer & Mobile Developer</span>
               </h1>
             </motion.div>
 
@@ -62,7 +63,7 @@ export default function Hero() {
 
             <motion.a
               href="#about"
-              className="mt-6 inline-block px-6 py-3 text-lg font-medium text-white bg-indigo-500 rounded-lg shadow-md hover:bg-indigo-600"
+              className="mt-6 inline-block px-6 py-3 text-lg font-medium text-white bg-sky-500 rounded-lg shadow-md hover:bg-sky-600"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
@@ -75,7 +76,7 @@ export default function Hero() {
             <img
               src={boyImage} // Use the imported image
               alt="Ibrahim Sheriff"
-              className="w-full h-auto object-cover md:max-w-xs mx-auto rounded-lg shadow-lg"
+              className="w-100 h-100 object-cover md:w-70 md:h-70 mx-auto rounded-full shadow-lg shadow-sky-500"
             />
           </div>
         </div>

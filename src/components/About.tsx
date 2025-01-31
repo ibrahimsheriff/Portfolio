@@ -44,15 +44,19 @@ export default function About() {
               </p>
 
               {/* Resume Button */}
+              {/* Resume Button */}
               <motion.a
                 href="https://drive.google.com/file/d/1lPyofeXPXhr2NKA0M2Twwis97y9JfLEv/view?usp=sharing"
-                className="mt-8 inline-block px-6 py-3 text-lg font-medium text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-700"
+                className="mt-8 inline-block px-6 py-3 text-base sm:text-lg lg:text-xl font-medium text-white bg-sky-500 rounded-lg shadow-md hover:bg-sky-600 w-full sm:w-auto text-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
               >
                 View Resume
               </motion.a>
+
+
+
             </div>
           </div>
         </motion.div>

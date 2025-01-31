@@ -56,11 +56,11 @@ export default function Education() {
                       className="w-full h-full object-cover rounded-lg"
                     />
                   </div>
-              
+
                   {/* Right Side: Content */}
                   <div className="ml-6 mt-4 sm:mt-0 p-6">
                     <h3 className="text-2xl font-bold text-gray-900">{edu.degree}</h3>
-                    <p className="mt-2 text-lg text-indigo-600">{edu.school}</p>
+                    <p className="mt-2 text-lg text-black">{edu.school}</p> {/* Changed text color to black */}
                     <p className="mt-1 text-gray-500">{edu.year}</p>
                   </div>
                 </div>

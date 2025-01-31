@@ -1,22 +1,25 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Briefcase, Calendar } from 'lucide-react';
 
 const experiences = [
-
   {
-    role: '(ABE-GROUPS) Mobile App Developer ',
+    role: 'UI/UX Design Intern & Frontend Developer (ABE-GROUPS)',
     company: 'ABE-GROUPS',
-    period: '2023 - 2024',
-    description: 'Developed cross-platform mobile applications using Flutter',
+    period: 'Nov 2023 - Jan 2024',
+    description: 'Assisted in designing user interfaces for web and mobile applications. Contributed to the creation of posters and marketing materials. Collaborated with the design team to translate wireframes and prototypes into fully functional web pages. Took an active role in frontend development, implementing designs into code using HTML, CSS, and JavaScript.'
   },
   {
-    role: 'UI/UX Design Intern',
-    company: 'Creative Agency',
-    period: '2023 - 2024',
-    description: 'Assisted in designing user interfaces for web and mobile applications',
-    
+    role: 'Mobile App Developer (ABE-GROUPS)',
+    company: 'ABE-GROUPS',
+    period: 'Feb 2024 - Dec 2024',
+    description: 'Developed cross-platform mobile applications using Flutter. Integrated Firebase for real-time database management and MySQL for backend data storage. Ensured the mobile apps were fully responsive across all device sizes, providing a seamless user experience. Worked on live projects, delivering high-quality solutions with a focus on performance optimization, scalability, and user interface design.'
+  },
+  {
+    role: 'Self Employed',
+    company: 'Flutter Developer',
+    period: 'Jan 2025 - Present',
+    description: 'Flutter Application Developer',
   }
 ];
 
@@ -50,23 +53,24 @@ export default function Experience() {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   transition={{ delay: index * 0.2, duration: 0.5 }}
-                  className={`relative flex justify-between items-center ${
-                    index % 2 === 0 ? 'flex-row-reverse' : ''
-                  }`}
+                  className={`relative flex justify-between items-center ${index % 2 === 0 ? 'flex-row-reverse' : ''
+                    }`}
                 >
                   <div className="w-full md:w-5/12">
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
+                    {/* Card Background Color Update */}
+                    <div className="bg-gradient-to-br from-indigo-100 to-indigo-50 p-6 rounded-lg shadow-lg">
                       <div className="flex items-center mb-4">
-                        <Briefcase className="h-6 w-6 text-indigo-600" />
+                        <Briefcase className="h-6 w-6 text-sky-500" /> {/* Changed to sky blue */}
                         <h3 className="ml-2 text-xl font-bold text-gray-900">{exp.role}</h3>
                       </div>
+
                       <div className="flex items-center text-gray-600 mb-4">
-                        <Calendar className="h-5 w-5 mr-2" />
+                        <Calendar className="h-5 w-5 mr-2 text-sky-500" /> {/* Changed to sky blue */}
                         <span>{exp.period}</span>
                       </div>
-                      <p className="text-gray-700 mb-4">{exp.description}</p>
+                      <p className="text-gray-700 mb-4 text-justify">{exp.description}</p>
                       <ul className="space-y-2">
-                        
+                        {/* Add list items here if necessary */}
                       </ul>
                     </div>
                   </div>

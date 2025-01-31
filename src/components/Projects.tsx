@@ -1,28 +1,25 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github } from 'lucide-react';
-import musicAppImage from '../assets/music_app.jpeg'; // Import music app image
-import portfolioImage from '../assets/portfolio.png'; // Import portfolio image
-import linkedinCloneImage from '../assets/Linkedin_clone.png'; // Import Linkedin clone image
 
 const projects = [
   {
     title: 'Music Mobile App',
     description: 'A Music application built with Flutter and Firebase',
-    image: musicAppImage, // Use the imported image for Music App
+    image: 'src/assets/music_app.jpeg',
     tags: ['Flutter', 'Firebase', 'UI/UX Design'],
     github: 'https://github.com/ibrahimsheriff/Music_App',
   },
   {
     title: 'Figma Design',
     description: 'In the Design every single component created and refined',
-    image: portfolioImage, // Use the imported image for Figma Design
+    image: 'src/assets/portfolio.png',
     tags: ['Figma'],
   },
   {
     title: 'Linkedin Clone App',
     description: 'A job search application inspired by LinkedIn',
-    image: linkedinCloneImage, // Use the imported image for Linkedin Clone
+    image: 'src/assets/Linkedin_clone.png',
     tags: ['Flutter'],
     github: 'https://github.com/ibrahimsheriff/linkedin_clone',
   },
@@ -35,7 +32,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-indigo-100 to-indigo-50">
+    <section id="projects" className="py-20 bg-gradient-to-br from-indigo-100 to-indigo-50"> {/* Lighter background colors */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -55,17 +52,17 @@ export default function Projects() {
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative transform-gpu"
-                whileHover={{ scale: 1.1, rotateY: 10, rotateX: 5 }}
+                whileHover={{ scale: 1.1, rotateY: 10, rotateX: 5 }}  // Increased hover size
                 style={{
-                  perspective: '1500px',
+                  perspective: '1500px',  // Adding perspective for 3D effect
                 }}
                 onMouseMove={(e) => {
                   const card = e.currentTarget;
                   const { offsetWidth: width, offsetHeight: height } = card;
                   const { offsetX: x, offsetY: y } = e.nativeEvent;
 
-                  const xRotate = ((y / height) - 0.6) * 30;
-                  const yRotate = ((x / width) - 0.6) * -30;
+                  const xRotate = ((y / height) - 0.6) * 30; // Y-axis rotation
+                  const yRotate = ((x / width) - 0.6) * -30; // X-axis rotation
                   card.style.transform = `rotateX(${xRotate}deg) rotateY(${yRotate}deg)`;
                 }}
                 onMouseLeave={(e) => {
@@ -86,7 +83,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm"
+                        className="px-3 py-1 bg-indigo-100 text-black rounded-full text-sm" // Changed text color to black
                       >
                         {tag}
                       </span>

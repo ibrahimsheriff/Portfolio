@@ -14,7 +14,7 @@ export default function Navbar() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-indigo-600"
+            className="text-2xl font-bold text-sky-500 hover:text-sky-600" // Changed here for "Portfolio" color
           >
             Portfolio
           </motion.div>
@@ -29,7 +29,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-600 hover:text-sky-500 px-3 py-2 rounded-md text-sm font-medium"
                 >
                   {item}
                 </motion.a>
@@ -62,7 +62,7 @@ export default function Navbar() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-600 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium"
+                className="text-gray-600 hover:text-sky-500 block px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item}
