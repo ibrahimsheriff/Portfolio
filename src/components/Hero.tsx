@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import boyImage from '../assets/boy.jpg'; // Import image for hero section
+import backgroundVideo from '../assets/background.mp4'; // Import video for background
 
 export default function Hero() {
   return (
@@ -11,7 +13,7 @@ export default function Hero() {
         muted 
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
-        <source src="src/assets/background.mp4" type="video/mp4" />
+        <source src={backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -71,7 +73,7 @@ export default function Hero() {
 
           <div className="mt-8 md:mt-0 relative">
             <img
-              src="src/assets/boy.jpg"
+              src={boyImage} // Use the imported image
               alt="Ibrahim Sheriff"
               className="w-full h-auto object-cover md:max-w-xs mx-auto rounded-lg shadow-lg"
             />
