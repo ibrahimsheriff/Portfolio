@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import sclImage from '../assets/scl.jpg'; // Import scl image
-import ksrImage from '../assets/ksr.jpg'; // Import ksr image
+import ksrImage from '../assets/KSR.jpg'; // Import ksr image
 
 const education = [
   {
